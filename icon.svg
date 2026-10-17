@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Agent World">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="55%" stop-color="#121a2d"/>
+      <stop offset="100%" stop-color="#172748"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64e6e0"/>
+      <stop offset="100%" stop-color="#829cff"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4edbd5"/>
+      <stop offset="100%" stop-color="#8b9cff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Full-bleed background for iOS home screen -->
+  <rect width="1024" height="1024" rx="220" fill="url(#bg)"/>
+  <!-- Outer soft ring -->
+  <circle cx="512" cy="512" r="340" fill="none" stroke="url(#ring)" stroke-width="28" opacity="0.35"/>
+  <!-- Connection network (agents working together) -->
+  <g stroke="url(#ring)" stroke-width="14" stroke-linecap="round" opacity="0.85" fill="none">
+    <path d="M320 380 L512 300 L704 380"/>
+    <path d="M320 380 L320 620 L512 720"/>
+    <path d="M704 380 L704 620 L512 720"/>
+    <path d="M320 620 L512 300"/>
+    <path d="M704 620 L512 300"/>
+    <path d="M320 380 L704 620"/>
+  </g>
+  <!-- Agent nodes -->
+  <g filter="url(#glow)">
+    <circle cx="512" cy="300" r="52" fill="url(#core)"/>
+    <circle cx="320" cy="380" r="44" fill="url(#core)"/>
+    <circle cx="704" cy="380" r="44" fill="url(#core)"/>
+    <circle cx="320" cy="620" r="44" fill="url(#core)"/>
+    <circle cx="704" cy="620" r="44" fill="url(#core)"/>
+    <circle cx="512" cy="720" r="48" fill="url(#core)"/>
+  </g>
+  <!-- Center synthesis node -->
+  <circle cx="512" cy="512" r="78" fill="#0b1020" stroke="url(#ring)" stroke-width="10"/>
+  <circle cx="512" cy="512" r="48" fill="url(#core)"/>
+  <!-- Minimal mark inside center -->
+  <text x="512" y="528" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="800" fill="#081323">◎</text>
+</svg>
